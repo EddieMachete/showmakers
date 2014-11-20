@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vancouver PowerPoint Presentations, Templates, Web Design, Video Production | ShowMakers Productions</title>
+    <meta name="description" content="Vancouver PowerPoint and multimedia production company specializing in corporate PowerPoint templates, PowerPoint design and video presentations" />
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="Css/main.css" />
+    <link rel="stylesheet" type="text/css" href="Css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="Css/WhiteFlashAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="Css/WhatsNewBannerAnimation.css" />
+    <style type="text/css">
+        body {
+            background-color: #000;
+        }
+        /* --- Your animation styles start here --- */
+    </style>
+    <!-- Scripts -->
+    <!-- Imports -->
+    <link id="WhiteFlashTemplate" rel="import" href="WhiteFlash.html" />
+    <link id="WhatsNewBannerTemplate" rel="import" href="WhatsNewBanner.html" />
+</head>
+<body>
+    <div class="l-page-header">
+        <div class="frosted-glass content">
+        	<div class="readable-gradient round-corners-8" data-controller="Page" data-name="Banner">
+            </div>
+        </div>
+    </div>
+    <!-- The following script loads the templates on the page -->
+    <script type="text/javascript">
+        //var link = document.querySelector('link[rel=import]');
+        var whatWeDo = GetAnimationFromTemplate('WhatsNewBannerTemplate', '.whats-new-banner');
+        var whiteFlash = GetAnimationFromTemplate('WhiteFlashTemplate', '.white-flash');
+
+        var readableGradient = document.querySelector('.readable-gradient');
+        readableGradient.appendChild(document.importNode(whatWeDo, true));
+        readableGradient.appendChild(document.importNode(whiteFlash, true));
+        
+        function GetAnimationFromTemplate(templateId, animationClass) {
+            var template = document.getElementById(templateId);
+            var animation = template.import.querySelector(animationClass);
+            animation.className += ' is-animated';
+            
+            return animation;
+        }
+    </script>
+</body>
+</html>

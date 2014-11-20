@@ -1,0 +1,56 @@
+.our-process-banner {
+    position: relative;
+}
+
+.our-process-banner .graphic {
+    left: 240px;
+    position: absolute;
+    top: 10px;
+}
+
+.our-process-banner .text {
+    /*display: inline-block;*/
+    /*float: left;*/
+    font-size: 15pt;
+    font-weight: bold;
+    margin: 20px 0 0 25px;
+    /*overflow: hidden;
+    width: 160px;*/
+}
+
+.our-process-banner .text .line {
+    line-height: 29pt;
+    opacity: 0;
+}
+
+.our-process-banner.is-animated .text .text-one-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+}
+
+.our-process-banner.is-animated .text .text-two-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1300ms; /* Chrome, Safari, Opera */
+    animation-delay: 1300ms;
+}
+
+.our-process-banner.is-animated .text .text-three-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1600ms; /* Chrome, Safari, Opera */
+    animation-delay: 1600ms;
+}
+
+.our-process-banner.is-animated .text .text-four-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1900ms; /* Chrome, Safari, Opera */
+    animation-delay: 1900ms;
+}

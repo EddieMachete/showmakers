@@ -1,0 +1,80 @@
+.our-philosophy-banner {
+    height: 195px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-philosophy-banner .text {
+    font-size: 22pt;
+	font-weight: bold;
+    margin: 60px 0 0 20px;
+}
+
+.our-philosophy-banner .text .text-one {
+    display: inline-block;
+    margin-left: 120px;
+    opacity: 0;
+}
+
+.our-philosophy-banner .text .text-two {
+    display: inline-block;
+    margin-left: 120px;
+    opacity: 0;
+}
+
+.our-philosophy-banner .text .text-three {
+    display: inline-block;
+    margin-left: 120px;
+    opacity: 0;
+}
+
+.our-philosophy-banner.is-animated .text .text-one-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+}
+
+.our-philosophy-banner.is-animated .text .text-two-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1300ms; /* Chrome, Safari, Opera */
+    animation-delay: 1300ms;
+}
+
+.our-philosophy-banner.is-animated .text .text-three-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1600ms; /* Chrome, Safari, Opera */
+    animation-delay: 1600ms;
+}
+
+.our-philosophy-banner .logo-and-stars {
+    bottom: 300px;
+    left: 600px;
+    position: absolute;
+}
+
+.our-philosophy-banner .logo-and-stars-animation {
+    -webkit-animation: logo-and-stars-transition 1s forwards; /* Chrome, Safari, Opera */
+    animation: logo-and-stars-transition 1s forwards;
+    
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+}
+
+.our-philosophy-banner .logo-and-stars .stars {
+    background: no-repeat url('../Images/Animations/OurPhilosophy/stars-1.png');
+    height: 295px;
+    width: 318px;
+
+    -webkit-animation: logo-and-stars-shake .1s infinite;
+    animation: logo-and-stars-shake .1s infinite;
+}
+
+.our-philosophy-banner .logo-and-stars .show-makers {
+    margin: 84px 0 0 80px;
+}

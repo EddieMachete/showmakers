@@ -1,0 +1,71 @@
+.animation {
+    display:none;
+}
+
+.animation.is-animated {
+    display: block;
+}
+
+/* --- logo-and-stars-transition ------------------------------- */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes logo-and-stars-transition {
+    from {
+        bottom: 300px;
+        left: 600px
+    }
+    to {
+        bottom: -20px;
+        left: 300px
+    }
+}
+
+/* Standard syntax */
+@keyframes logo-and-stars-transition {
+    from {
+        bottom: 300px;
+        left: 600px
+    }
+    to {
+        bottom: -20px;
+        left: 300px
+    }
+}
+
+
+
+/* --- logo-and-stars-shake ------------------------------- */
+@-webkit-keyframes logo-and-stars-shake {
+    from { background-position-x: 0;}
+    to {background-position-x: 3px;}
+}
+
+
+@keyframes logo-and-stars-shake {
+    from { background-position-x: 0;}
+    to {background-position-x: 3px;}
+}
+
+
+
+/* --- slide-in-left ------------------------------- */
+@-webkit-keyframes slide-in-left {
+    from {
+       margin-left: 120px;
+       opacity: 0;
+    }
+    to {
+        margin-left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+       margin-left: 120px;
+       opacity: 0;
+    }
+    to {
+        margin-left: 0;
+       opacity: 1;
+    }
+}

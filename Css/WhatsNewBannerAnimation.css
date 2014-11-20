@@ -1,0 +1,60 @@
+.whats-new-banner .text {
+    /*display: inline-block;*/
+    /*float: left;*/
+    font-size: 15pt;
+    /*font-weight: bold;*/
+    margin: 40px 0 0 25px;
+    /*overflow: hidden;*/
+    width: 260px;
+}
+
+.whats-new-banner .text .quote {
+    font-size: 10pt;
+    margin-top: 15px;
+}
+
+.whats-new-banner .sprite-animation .slide {
+    left: 379px;
+    position: absolute;
+    top: 25px;
+    opacity: 0;
+    
+    -webkit-transition: opacity 800ms;
+}
+
+.whats-new-banner .sprite-animation .slide.is-visible {
+    /*-webkit-animation:  fade-in-frames 800ms;*/
+    opacity: 1;
+}
+
+.whats-new-banner .sprite-animation .top-image {
+    left: 240px;
+    position: absolute;
+    top: 10px;
+    z-index: 5;
+}
+
+.l-page-header .white-flash {
+    z-index: 10;
+}
+
+
+
+/* --- what-we-do-shiner-light ------------------------------- */
+@-webkit-keyframes fade-in-frames {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-frames {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

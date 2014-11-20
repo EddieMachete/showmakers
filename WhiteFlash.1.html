@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vancouver PowerPoint Presentations, Templates, Web Design, Video Production | ShowMakers Productions</title>
+    <meta name="description" content="Vancouver PowerPoint and multimedia production company specializing in corporate PowerPoint templates, PowerPoint design and video presentations" />
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="Css/main.css" />
+    <link rel="stylesheet" type="text/css" href="Css/animations.css" />
+    <style type="text/css">
+        body {
+            background-color: #000;
+        }
+        
+        .readable-gradient {
+            overflow: hidden;
+        }
+        
+        /* --- Your animation styles start here --- */
+        .l-page-header .white-flash .flash {
+            height: 195px;
+        }
+        
+        .white-flash .container {
+            border-left: solid 1px orange;
+            border-right: solid 1px orange;
+            margin: 0 auto;
+        }
+        
+        .white-flash .flash {
+            background-color: #FFF;
+        }
+        
+        .banner-flash-shrink-vertical-animation {
+            -webkit-animation: banner-flash-shrink-vertical 1s forwards;
+            animation: banner-flash-shrink-vertical 1s forwards;
+            
+            -webkit-animation-delay: 1.5s; /* Chrome, Safari, Opera */
+            animation-delay: 1.5s;
+        }
+        
+        .shrink-horizontal-animation {
+            margin-left: auto;
+            margin-right: auto;
+            
+            -webkit-animation: shrink-horizontal 1s forwards;
+            animation: shrink-horizontal 1s forwards;
+            
+            -webkit-animation-delay: 500ms; /* Chrome, Safari, Opera */
+            animation-delay: 500ms;
+        }
+        
+        
+        .fade-out-animation {
+            -webkit-animation: fade-out 1s forwards;
+            animation: fade-out 1s forwards;
+        }
+        
+        
+        /* --- shrink-horizontal ------------------------------- */
+        @-webkit-keyframes shrink-horizontal {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0;
+            }
+        }
+        
+        @keyframes shrink-horizontal {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0;
+            }
+        }
+        
+        
+        /* --- shrink-horizontal ------------------------------- */
+        @-webkit-keyframes banner-flash-shrink-vertical {
+            from {
+                height: 195px;
+                margin-top: 0;
+            }
+            to {
+                height: 0;
+                margin-top: 97px;
+            }
+        }
+        
+        @keyframes banner-flash-shrink-vertical {
+            from {
+                height: 195px;
+                margin-top: 0;
+            }
+            to {
+                height: 0;
+                margin-top: 97px;
+            }
+        }
+        
+        
+        /* --- fade-out ------------------------------- */
+        @-webkit-keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fade-out {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+    <!-- Scripts -->
+</head>
+<body>
+    <div class="l-page-header">
+        <div class="frosted-glass content">
+        	<div class="readable-gradient round-corners-8" data-controller="Page" data-name="Banner">
+        	<!-- --- Your banner animation starts here --------------------------------- -->
+                <div class="white-flash animation is-animated">
+                    <div class="container shrink-horizontal-animation">
+                        <div class="flash banner-flash-shrink-vertical-animation"></div>
+                    </div>
+                </div>
+        	<!-- --- Your banner animation ends here ---------------------------------- -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

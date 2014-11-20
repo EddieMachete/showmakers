@@ -1,0 +1,51 @@
+.our-services-banner .text {
+    display: inline-block;
+    /*float: left;*/
+    font-size: 15pt;
+    /*font-weight: bold;*/
+    margin: 40px 0 0 25px;
+    /*overflow: hidden;*/
+    width: 260px;
+}
+
+.our-services-banner .text .quote {
+    font-size: 10pt;
+    margin-top: 15px;
+}
+
+.our-services-banner .sprite-animation {
+    background: url('../Images/our-services-ss.png') 0 0;
+    height: 200px;
+    left: 220px;
+    position: absolute;
+    top: 0;
+    width: 452px;
+    
+    -webkit-animation: our-services-frames-v 5000ms steps(15) infinite alternate;
+    animation: our-services-frames-v 5000ms steps(15) infinite alternate;
+    
+    
+    -webkit-animation-delay: 2s; /* Chrome, Safari, Opera */
+    animation-delay: 2s;
+}
+
+
+
+/* --- what-we-do-shiner-light ------------------------------- */
+@-webkit-keyframes our-services-frames-v {
+    0%, 80% {
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-y: -2955px;
+    }
+}
+
+@keyframes our-services-frames-v {
+    0%, 80% {
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-y: -2955px;
+    }
+}
