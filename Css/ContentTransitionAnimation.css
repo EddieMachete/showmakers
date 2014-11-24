@@ -1,0 +1,106 @@
+.main-content .content-transition .transition-border.expandable {
+	-webkit-animation: transition-border-expand-frames 2s forwards;
+	animation: transition-border-expand-frames 2s forwards;
+	
+	-webkit-animation-delay: 5s;
+	animation-delay: 5s;
+}
+
+.main-content .content-transition .left .mask.collapsible {
+	-webkit-animation: left-mask-collapse-frames 800ms forwards;
+	animation: left-mask-collapse-frames 800ms forwards;
+	
+	-webkit-animation-delay: 5500ms;
+	animation-delay: 5500ms;
+}
+
+.main-content .content-transition .right .mask.collapsible {
+	-webkit-animation: right-mask-collapse-frames 800ms forwards;
+	animation: right-mask-collapse-frames 800ms forwards;
+	
+	-webkit-animation-delay: 5500ms;
+	animation-delay: 5500ms;
+}
+
+
+
+/* --- transition-border-expand-frames ------------------------------- */
+@-webkit-keyframes transition-border-expand-frames {
+    0% {
+       height: 0px;
+       margin-top: 170px;
+    }
+    20%, 80% {
+        height: 340px;
+        margin-top: 0;
+    }
+    80% {
+        height: 340px;
+        margin-top: 0;
+    }
+    100% {
+        height: 0px;
+        margin-top: 170px;
+    }
+}
+
+@keyframes transition-border-expand-frames {
+    0% {
+       height: 0px;
+       margin-top: 170px;
+    }
+    20%, 80% {
+        height: 340px;
+        margin-top: 0;
+    }
+    80% {
+        height: 340px;
+        margin-top: 0;
+    }
+    100% {
+        height: 0px;
+        margin-top: 170px;
+    }
+}
+
+
+
+/* --- left-mask-collapse-frames ------------------------------- */
+@-webkit-keyframes left-mask-collapse-frames {
+    0% {
+        width: 252px;
+    }
+    100% {
+        width: 2px;
+    }
+}
+
+@keyframes left-mask-collapse-frames {
+    0% {
+        width: 252px;
+    }
+    100% {
+        width: 2px;
+    }
+}
+
+
+
+/* --- right-mask-collapse-frames ------------------------------- */
+@-webkit-keyframes right-mask-collapse-frames {
+    0% {
+        width: 552px;
+    }
+    100% {
+        width: 2px;
+    }
+}
+
+@keyframes right-mask-collapse-frames {
+    0% {
+        width: 552px;
+    }
+    100% {
+        width: 2px;
+    }
+}

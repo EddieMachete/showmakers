@@ -29,6 +29,7 @@ PageController.prototype.Initialize = function () {
     self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho); });
     self.NavWhoWeAre.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhoWeAreBanner); });
     self.NavOurPhilosophy.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPhilosophyBanner); });
+    self.NavOurPhilosophy.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPhilosophyBanner, self.OurPhilosophyContent); });
     
     // What
     self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat); });
@@ -80,10 +81,12 @@ PageController.prototype.ShowAnimation = function(target, animation) {
 PageController.prototype.LoadTemplates = function() {
     //var link = document.querySelector('link[rel=import]');
     var readableGradient = document.querySelector('.readable-gradient');
+    var mainContent = document.querySelector('.main-content');
     
     // Who
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhoWeAreBannerTemplate', '.who-we-are-banner'), true));
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurPhilosophyBannerTemplate', '.our-philosophy-banner'), true));
+    //mainContent.appendChild(document.importNode(GetAnimationFromTemplate('OurPhilosophyContentTemplate', '.our-philosophy-content')), true)
     // What
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhatWeDoBannerTemplate', '.what-we-do-banner'), true));
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurProcessBannerTemplate', '.our-process-banner'), true));

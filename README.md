@@ -26,3 +26,17 @@ Visit http://docs.c9.io for documentation, or http://support.c9.io for support.
 To watch some training videos, visit http://www.youtube.com/user/c9ide
 
 http://www.wesduff.com/getting-started-with-polymer/
+
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/EddieMachete/showmakers.git
+git push -u origin master
+
+
+git add -A
+git rm -r --cached .c9revisions/*
+git commit -m 'Added details section on every slide'
+git push -u origin master
+
+git reset --hard HEAD~1

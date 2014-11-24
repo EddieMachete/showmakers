@@ -9,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="Css/main.css" />
     <link rel="stylesheet" type="text/css" href="Css/animations.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhiteFlashAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="Css/ContentTransitionAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurPhilosophyBannerAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="Css/OurPhilosophyContentAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhatWeDoBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurProcessBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurServicesBannerAnimation.css" />
@@ -19,6 +21,7 @@
     <!-- Who -->
     <link id="WhoWeAreBannerTemplate" rel="import" href="WhoWeAreBanner.html" />
     <link id="OurPhilosophyBannerTemplate" rel="import" href="OurPhilosophyBanner.html" />
+    <link id="OurPhilosophyContentTemplate" rel="import" href="OurPhilosophyContent.html" />
     <!-- What -->
     <link id="WhatWeDoBannerTemplate" rel="import" href="WhatWeDoBanner.html" />
     <link id="OurProcessBannerTemplate" rel="import" href="OurProcessBanner.html" />
@@ -79,16 +82,48 @@
                 </ul>
             </div>
             <div class="frosted-glass content">
-            	<div class="readable-gradient round-corners-8" data-controller="Page" data-name="Banner"></div>
+            	<div class="readable-gradient bottom-left-round-corners-8" data-controller="Page" data-name="Banner"></div>
             </div>
         </div>
     </div>
-    <div>Content</div>
-    <div class="l-footer">
-    	<div class="container">
-        	<div class="padded-left text-white">
-	        	Copyright &copy;2014 Showmakers Productions - All Rights Reserved. | Privacy Policy | Contact Us |
+    <div class="main-content padded-left frosted-glass top-left-round-corners-8">
+        <div class="container main-content-high top-left-round-corners-8">
+            <!-- ----- Our Philosophy ----- -->
+            <div class="our-philosophy-content main-content-high">
+                <div class="message">
+                    <h1>We don&apos;t loose your luggage</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
+                    </p>
+                </div>
             </div>
+            <!-- ----- Content Transition ----- -->
+            <div class="content-transition">
+                <div class="left main-content-high">
+                    <div class="mask main-content-high collapsible">
+                        <div class="transition-border expandable float-left"></div>
+                    </div>
+                </div>
+                <div class="right main-content-high">
+                    <div class="mask main-content-high collapsible">
+                        <div class="transition-border expandable"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="l-power-point-section">
+    	<div class="padded-left text-white">
+        	Looking for powerpoint help
+        </div>
+    </div>
+    <div class="l-footer">
+    	<div class="padded-left text-white">
+        	Copyright &copy;2014 Showmakers Productions - All Rights Reserved. | Privacy Policy | Contact Us |
         </div>
     </div>
 </body>

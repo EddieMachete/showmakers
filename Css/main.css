@@ -34,6 +34,12 @@ body {
 	overflow: hidden;
 }
 
+.l-power-point-section {
+	bottom: 40px;
+	position: fixed;
+	width: 100%;
+}
+
 .l-footer {
 	background-color: #0E365C;
 	background: repeating-linear-gradient(rgba(95, 122, 147, .6), rgba(14, 54, 92, .6));
@@ -83,6 +89,18 @@ body {
 	color: #FC8D00;
 }
 
+.display-inline-block {
+	display: inline-block;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
 .list-unstyled {
 	list-style: none;
 	padding-left: 0;
@@ -125,6 +143,14 @@ body {
 	border-radius: 8px;
 }
 
+.bottom-left-round-corners-8 {
+	border-bottom-left-radius: 8px;
+}
+
+.top-left-round-corners-8 {
+	border-top-left-radius: 8px;
+}
+
 .translucent-gradient {
 	background: #000;
 	/* Safari 5.1 to 6.0 */
@@ -140,7 +166,7 @@ body {
 .frosted-glass {
 	background-color: #FFF;
 	background-color: rgba(255, 255, 255, .2);
-	padding: 15px;
+	padding: 15px 0 15px 15px;
 	padding-top: 0;
 }
 
@@ -258,11 +284,65 @@ body {
       linear-gradient(to bottom, #FFFFFF, rgba(0, 0, 0, 0)) 1 100%;
 }
 
+.main-content {
+	margin-bottom: 200px;
+	margin-top: 10px;
+}
+
+.main-content-high {
+	height: 340px;
+}
+
+.main-content .container {
+	background-color: #FFF;
+	margin: 15px 0 0 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.main-content .content-transition {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
+.main-content .content-transition .left {
+	float: left;
+	position: relative;
+	width: 252px;
+}
+
+.main-content .content-transition .left .mask {
+	background-color: #FFF;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 252px;
+}
+
+.main-content .content-transition .right {
+	float: left;
+	position: relative;
+	width: 552px;
+}
+
+.main-content .content-transition .right .mask {
+	background-color: #FFF;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 552px;
+}
+
+.main-content .content-transition .transition-border {
+	background-color: orange;
+	width: 2px;
+}
+
 
 @media (min-width: 980px) {
 	.padded-left {
 		margin-left:calc((100% - 980px)/2);
 		overflow: hidden;
-		width: 100%;
 	}
 }

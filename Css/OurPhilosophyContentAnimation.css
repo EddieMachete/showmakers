@@ -1,0 +1,20 @@
+.our-philosophy-content {
+    background: no-repeat url('../Images/our-philosophy-content.jpg');
+    overflow: hidden;
+}
+
+.our-philosophy-content .message {
+    color: #666;
+    margin: 20px 0 20px 290px;
+    max-width: 480px;
+}
+
+.our-philosophy-content .message h1 {
+    font-size: 11pt;
+    font-weight: normal;
+}
+
+.our-philosophy-content .message p {
+    font-size: 9pt;
+    line-height: 16pt;
+}
