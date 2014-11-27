@@ -19,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="Css/OurServicesBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhatsNewBannerAnimation.css" />
     <!-- Templates -->
-    <link id="WhiteFlashTemplate" rel="import" href="WhiteFlash.html" />
     <!-- Who -->
     <link id="WhoWeAreBannerTemplate" rel="import" href="WhoWeAreBanner.html" />
     <link id="OurPhilosophyBannerTemplate" rel="import" href="OurPhilosophyBanner.html" />
@@ -95,6 +94,12 @@
                             <img class="show-makers" src="Images/our-people-banner.png" width="363" height="270" />
                         </div>
                     </div>
+            	    <!-- ----- White Flash Transition ----- -->
+                    <div class="white-flash animation" data-controller="Page" data-name="WhiteFlash">
+                        <div class="mask shrink-horizontal-animation">
+                            <div class="transition-border banner-flash-shrink-vertical-animation float-left"></div>
+                        </div>
+                    </div>
             	</div>
             </div>
         </div>
@@ -130,17 +135,11 @@
             <!-- ----- Content Transition ----- -->
             <div class="content-transition" data-controller="Page" data-name="ContentTransition">
                 <div class="left main-content-high">
-                    <!--<div class="mask main-content-high collapsible">
-                        <div class="transition-border expandable float-left"></div>
-                    </div>-->
                     <div class="mask main-content-high collapsible float-right">
                         <div class="transition-border expandable"></div>
                     </div>
                 </div>
                 <div class="right main-content-high">
-                    <!--<div class="mask main-content-high collapsible">
-                        <div class="transition-border expandable"></div>
-                    </div>-->
                     <div class="mask main-content-high collapsible float-left">
                         <div class="transition-border expandable"></div>
                     </div>

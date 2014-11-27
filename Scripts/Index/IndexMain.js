@@ -111,8 +111,6 @@ PageController.prototype.LoadTemplates = function() {
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurServicesBannerTemplate', '.our-services-banner'), true));
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhatsNewBannerTemplate', '.whats-new-banner'), true));
     
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhiteFlashTemplate', '.white-flash'), true));
-    
     function GetAnimationFromTemplate(templateId, animationClass) {
         var template = document.getElementById(templateId);
         var animation = template.import.querySelector(animationClass);

@@ -334,8 +334,8 @@ body {
 
 .main-content .content-transition .right {
 	height: 340px;
-	width: calc(100% - 252px);
-	margin-left: 252px;
+	width: calc(100% - 267px); /* add the 15px padding from the heather so lines match 252 + 15 = 267 */
+	margin-left: 267px;
 }
 
 .main-content .content-transition .right .mask {
@@ -343,9 +343,9 @@ body {
 	width: 100%;
 }
 
-.main-content .content-transition .transition-border {
-	background-color: orange;
-	width: 2px;
+.transition-border {
+	background-color: #FC8D00;
+	width: 1px;
 }
 
 .content-box {
