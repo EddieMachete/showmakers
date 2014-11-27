@@ -287,6 +287,11 @@ body {
 .main-content {
 	margin-bottom: 200px;
 	margin-top: 10px;
+	visibility: hidden;
+}
+
+.main-content.is-visible {
+	visibility: visible;
 }
 
 .main-content-high {
@@ -300,43 +305,63 @@ body {
 	position: relative;
 }
 
+.main-content .content {
+	display: none;
+}
+
+.main-content .content.is-animated {
+	display: block;
+}
+
 .main-content .content-transition {
+	height: 340px;
 	left: 0;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
+	width: 100%;
 }
 
 .main-content .content-transition .left {
 	float: left;
-	position: relative;
 	width: 252px;
 }
 
 .main-content .content-transition .left .mask {
 	background-color: #FFF;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 252px;
+	width: 100%;
 }
 
 .main-content .content-transition .right {
-	float: left;
-	position: relative;
-	width: 552px;
+	height: 340px;
+	width: calc(100% - 252px);
+	margin-left: 252px;
 }
 
 .main-content .content-transition .right .mask {
 	background-color: #FFF;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 552px;
+	width: 100%;
 }
 
 .main-content .content-transition .transition-border {
 	background-color: orange;
 	width: 2px;
+}
+
+.content-box {
+    color: #666;
+    margin: 20px 0 20px 290px;
+    max-width: 480px;
+}
+
+.content-title-small {
+    font-size: 11pt;
+    font-weight: normal;
+}
+
+.content-paragraph-small {
+    font-size: 9pt;
+    line-height: 16pt;
 }
 
 

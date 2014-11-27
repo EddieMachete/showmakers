@@ -19,7 +19,8 @@ PageController.prototype.Initialize = function () {
     self.CurrentMenuItem = self.NavWho;
     self.CurrentSubMenuItem = self.NavWhoWeAre;
     self.CurrentSubMenu = self.SubSectionWho;
-    self.CurrentAnimation = self.WhoWeAreBanner;
+    self.CurrentBannerAnimation = self.WhoWeAreBanner;
+    self.CurrentContentAnimation = null;
     
     self.WhatsNewImages = self.WhatsNewBanner.find('.slide');
     self.CurrentNextImageIndex = 0;
@@ -28,12 +29,12 @@ PageController.prototype.Initialize = function () {
     // Who
     self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho); });
     self.NavWhoWeAre.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhoWeAreBanner); });
-    self.NavOurPhilosophy.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPhilosophyBanner); });
     self.NavOurPhilosophy.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPhilosophyBanner, self.OurPhilosophyContent); });
+    self.NavOurPeople.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPeopleBanner, self.OurPeopleContent); });
     
     // What
     self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat); });
-    self.NavWhatWeDo.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatWeDoBanner); });
+    self.NavWhatWeDo.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatWeDoBanner, self.WhatWeDoContent); });
     self.NavOurProcess.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurProcessBanner); });
     self.NavOurServices.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurServicesBanner); });
     self.NavWhatsNew.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatsNewBanner); });
@@ -62,19 +63,36 @@ PageController.prototype.ShowSubMenu = function(target, subMenu) {
     }, 200);
 };
 
-PageController.prototype.ShowAnimation = function(target, animation) {
+PageController.prototype.ShowAnimation = function(target, bannerAnimation, contentAnimation) {
     var self = this;
     
     self.CurrentSubMenuItem.removeClass('is-selected');
-    self.CurrentAnimation.removeClass('is-animated');
+    self.CurrentBannerAnimation.removeClass('is-animated');
     self.WhiteFlash.removeClass('is-animated');
+    self.ContentTransition.removeClass('is-animated');
     self.CurrentSubMenuItem = target;
-    self.CurrentAnimation = animation;
+    self.CurrentBannerAnimation = bannerAnimation;
+    
+    // Content animation -------------
+    if (self.CurrentContentAnimation)
+        self.CurrentContentAnimation.removeClass('is-animated');
+    
+    self.CurrentContentAnimation = contentAnimation;
+    
+    if (self.CurrentContentAnimation)
+        self.Content.addClass('is-visible');
+    else
+        self.Content.removeClass('is-visible');
     
     setTimeout(function() {
         self.CurrentSubMenuItem.addClass('is-selected');
         self.WhiteFlash.addClass('is-animated');
-        self.CurrentAnimation.addClass('is-animated');
+        self.CurrentBannerAnimation.addClass('is-animated');
+        
+        if (self.CurrentContentAnimation) {
+            self.ContentTransition.addClass('is-animated');
+            self.CurrentContentAnimation.addClass('is-animated');
+        }
     }, 100);
 };
 

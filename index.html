@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="Css/ContentTransitionAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurPhilosophyBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurPhilosophyContentAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="Css/OurPeopleBannerAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="Css/OurPeopleContentAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhatWeDoBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurProcessBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurServicesBannerAnimation.css" />
@@ -61,7 +63,7 @@
                     <li class="tall" data-controller="Page" data-name="NavOurPhilosophy">
                     	<div class="underline">Our philosophy</div>
                     </li>
-                    <li class="tall">
+                    <li class="tall" data-controller="Page" data-name="NavOurPeople">
                     	<div class="underline">Our people</div>
                     </li>
                 </ul>
@@ -82,33 +84,64 @@
                 </ul>
             </div>
             <div class="frosted-glass content">
-            	<div class="readable-gradient bottom-left-round-corners-8" data-controller="Page" data-name="Banner"></div>
+            	<div class="readable-gradient bottom-left-round-corners-8" data-controller="Page" data-name="Banner">
+            	    <!-- ----- Our People ----- -->
+            	    <div class="our-people-banner animation" data-controller="Page" data-name="OurPeopleBanner">
+                        <div class="text text-open-sans-light text-white">
+                            <div class="text-one text-one-animation">We produce</div>
+                            <div class="text-two text-two-animation">and deliver</div>
+                        </div>
+                        <div class="note note-animation">
+                            <img class="show-makers" src="Images/our-people-banner.png" width="363" height="270" />
+                        </div>
+                    </div>
+            	</div>
             </div>
         </div>
     </div>
-    <div class="main-content padded-left frosted-glass top-left-round-corners-8">
+    <div class="main-content padded-left frosted-glass top-left-round-corners-8" data-controller="Page" data-name="Content">
         <div class="container main-content-high top-left-round-corners-8">
+            <!-- WHO --
             <!-- ----- Our Philosophy ----- -->
-            <div class="our-philosophy-content main-content-high">
-                <div class="message">
-                    <h1>We don&apos;t loose your luggage</h1>
-                    <p>
+            <div class="our-philosophy-content content main-content-high" data-controller="Page" data-name="OurPhilosophyContent">
+                <div class="content-box">
+                    <h1 class="content-title-small">We don&apos;t loose your luggage</h1>
+                    <p class="content-paragraph-small">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
-                    <p>
+                    <p class="content-paragraph-small">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
                     </p>
                 </div>
             </div>
+            <!-- ----- Our People ----- -->
+            <div class="our-people-content content main-content-high" data-controller="Page" data-name="OurPeopleContent">
+                <div class="content-box">
+                    <h1 class="content-title-small">Our People</h1>
+                    <p class="content-paragraph-small">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+            </div>
+            <!-- WHAT -->
+            <div class="what-we-do-content content main-content-high" data-controller="Page" data-name="WhatWeDoContent">
+                What we do
+            </div>
             <!-- ----- Content Transition ----- -->
-            <div class="content-transition">
+            <div class="content-transition" data-controller="Page" data-name="ContentTransition">
                 <div class="left main-content-high">
-                    <div class="mask main-content-high collapsible">
+                    <!--<div class="mask main-content-high collapsible">
                         <div class="transition-border expandable float-left"></div>
+                    </div>-->
+                    <div class="mask main-content-high collapsible float-right">
+                        <div class="transition-border expandable"></div>
                     </div>
                 </div>
                 <div class="right main-content-high">
-                    <div class="mask main-content-high collapsible">
+                    <!--<div class="mask main-content-high collapsible">
+                        <div class="transition-border expandable"></div>
+                    </div>-->
+                    <div class="mask main-content-high collapsible float-left">
                         <div class="transition-border expandable"></div>
                     </div>
                 </div>

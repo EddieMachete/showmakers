@@ -1,0 +1,76 @@
+.our-people-banner {
+    height: 195px;
+    overflow: hidden;
+    position: relative;
+}
+
+.our-people-banner .text {
+    font-size: 22pt;
+	font-weight: bold;
+    margin: 20px 0 0 20px;
+}
+
+.our-people-banner .text .text-one {
+    margin-left: 120px;
+    opacity: 0;
+}
+
+.our-people-banner .text .text-two {
+    margin-left: 120px;
+    opacity: 0;
+}
+
+.our-people-banner.is-animated .text .text-one-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 1800ms; /* Chrome, Safari, Opera */
+    animation-delay: 1800ms;
+}
+
+.our-people-banner.is-animated .text .text-two-animation {
+    -webkit-animation: slide-in-left 500ms forwards; /* Chrome, Safari, Opera */
+    animation: slide-in-left 500ms forwards;
+    
+    -webkit-animation-delay: 2000ms; /* Chrome, Safari, Opera */
+    animation-delay: 2000ms;
+}
+
+.our-people-banner .note {
+    bottom: -270px;
+    left: 600px;
+    position: absolute;
+}
+
+.our-people-banner .note-animation {
+    -webkit-animation: our-people-note-frames 600ms forwards; /* Chrome, Safari, Opera */
+    animation:  our-people-note-frames 600ms forwards;
+    
+    -webkit-animation-delay: 2000ms; /* Chrome, Safari, Opera */
+    animation-delay: 2000ms;
+}
+
+/* --- logo-and-stars-transition ------------------------------- */
+/* Chrome, Safari, Opera */
+@-webkit-keyframes our-people-note-frames {
+    from {
+        bottom: -270px;
+        left: 400px
+    }
+    to {
+        bottom: -20px;
+        left: 300px
+    }
+}
+
+/* Standard syntax */
+@keyframes our-people-note-frames {
+    from {
+        bottom: -270px;
+        left: 400px
+    }
+    to {
+        bottom: -20px;
+        left: 300px
+    }
+}

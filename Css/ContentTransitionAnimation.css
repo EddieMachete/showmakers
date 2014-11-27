@@ -1,25 +1,25 @@
-.main-content .content-transition .transition-border.expandable {
-	-webkit-animation: transition-border-expand-frames 2s forwards;
-	animation: transition-border-expand-frames 2s forwards;
+.main-content .content-transition.is-animated .transition-border.expandable {
+	-webkit-animation: transition-border-expand-frames 2s;
+	animation: transition-border-expand-frames 2s;
 	
-	-webkit-animation-delay: 5s;
-	animation-delay: 5s;
+	-webkit-animation-delay: 500ms;
+	animation-delay: 500ms;
 }
 
-.main-content .content-transition .left .mask.collapsible {
+.main-content .content-transition.is-animated .left .mask.collapsible {
 	-webkit-animation: left-mask-collapse-frames 800ms forwards;
 	animation: left-mask-collapse-frames 800ms forwards;
 	
-	-webkit-animation-delay: 5500ms;
-	animation-delay: 5500ms;
+	-webkit-animation-delay: 1000ms;
+	animation-delay: 1000ms;
 }
 
-.main-content .content-transition .right .mask.collapsible {
+.main-content .content-transition.is-animated .right .mask.collapsible {
 	-webkit-animation: right-mask-collapse-frames 800ms forwards;
 	animation: right-mask-collapse-frames 800ms forwards;
 	
-	-webkit-animation-delay: 5500ms;
-	animation-delay: 5500ms;
+	-webkit-animation-delay: 1000ms;
+	animation-delay: 1000ms;
 }
 
 
@@ -68,7 +68,7 @@
 /* --- left-mask-collapse-frames ------------------------------- */
 @-webkit-keyframes left-mask-collapse-frames {
     0% {
-        width: 252px;
+        width: 100%;
     }
     100% {
         width: 2px;
@@ -89,18 +89,22 @@
 /* --- right-mask-collapse-frames ------------------------------- */
 @-webkit-keyframes right-mask-collapse-frames {
     0% {
-        width: 552px;
+        margin-left: 0;
+        width: 100%;
     }
     100% {
-        width: 2px;
+        margin-left: 50%;
+        width: 0;
     }
 }
 
 @keyframes right-mask-collapse-frames {
     0% {
-        width: 552px;
+        margin-left: 0;
+        width: 100%;
     }
     100% {
-        width: 2px;
+        margin-left: 50%;
+        width: 0;
     }
 }
