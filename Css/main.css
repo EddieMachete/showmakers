@@ -19,12 +19,11 @@ html {
 }
 
 body {
+	background-color: #000;
+	color: #333;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 1.42857143;
-	color: #333;
-	background-color: #fff;
-
 	margin: 0;
 	padding: 0;
 }
@@ -89,6 +88,10 @@ body {
 	color: #FC8D00;
 }
 
+.text-justified {
+	text-align: justify;
+}
+
 .display-inline-block {
 	display: inline-block;
 }
@@ -110,8 +113,8 @@ body {
 	margin: 0;
 }
 
-.office-background {
-	background: #000 no-repeat center fixed url('../Images/office-background.jpg');
+.cursor-pointer {
+	cursor: pointer;
 }
 
 .background-cover {
@@ -119,6 +122,98 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+.transparent-background-cover-office::after {
+	content: '';
+	background: no-repeat center fixed url('../Images/office-background.jpg');
+	opacity: 0.1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	-webkit-animation: background-fade-in-frames 600ms forwards;
+    animation: background-fade-in-frames 600ms forwards;
+    
+    -webkit-animation-delay: 100ms; /* Chrome, Safari, Opera */
+    animation-delay: 100ms;
+}
+
+.transparent-background-cover-table::after {
+	content: '';
+	background: no-repeat center fixed url('../Images/table-background.jpg');
+	opacity: 0.1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	-webkit-animation: background-fade-in-frames 600ms forwards;
+    animation: background-fade-in-frames 600ms forwards;
+    
+    -webkit-animation-delay: 100ms; /* Chrome, Safari, Opera */
+    animation-delay: 100ms;
+}
+
+.transparent-background-cover-magnets::after {
+	content: '';
+	background: no-repeat center fixed url('../Images/magnets-background.jpg');
+	opacity: 0.1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	-webkit-animation: background-fade-in-frames 600ms forwards;
+    animation: background-fade-in-frames 600ms forwards;
+    
+    -webkit-animation-delay: 100ms; /* Chrome, Safari, Opera */
+    animation-delay: 100ms;
+}
+
+.transparent-background-cover-wood::after {
+	content: '';
+	background: no-repeat center fixed url('../Images/wood-background.jpg');
+	opacity: 0.1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	
+	-webkit-animation: background-fade-in-frames 600ms forwards;
+    animation: background-fade-in-frames 600ms forwards;
+    
+    -webkit-animation-delay: 100ms; /* Chrome, Safari, Opera */
+    animation-delay: 100ms;
 }
 
 .readable-gradient {
@@ -260,7 +355,6 @@ body {
 	font-weight: 200;
 	line-height: 1.5em;
 	margin: 10px 20px;
-	text-align: justify;
 }
 
 /* End Description*/
@@ -345,13 +439,15 @@ body {
 
 .transition-border {
 	background-color: #FC8D00;
-	width: 1px;
+	width: 2px;
 }
 
 .content-box {
     color: #666;
+    height: 300px;
     margin: 20px 0 20px 290px;
     max-width: 480px;
+    position: relative;
 }
 
 .content-title-small {
@@ -364,6 +460,18 @@ body {
     line-height: 16pt;
 }
 
+.materialized-identity {
+	bottom: -20px;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+    
+    -webkit-animation: fade-in-frames 600ms forwards;
+    animation: fade-in-frames 600ms forwards;
+    
+    -webkit-animation-delay: 1500ms; /* Chrome, Safari, Opera */
+    animation-delay: 1500ms;
+}
 
 @media (min-width: 980px) {
 	.padded-left {

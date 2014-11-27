@@ -1,5 +1,16 @@
 $(Body_Load);
 
+/* Pre-load background images so transitions are smooth */
+var background2= new Image(1600,1200)
+background2.src = 'Images/table-background.jpg';
+
+var background3  = new Image(1600,1200)
+background3.src = 'Images/magnets-background.jpg';
+
+var background4 = new Image(1600,1200)
+background4.src = 'Images/wood-background.jpg';
+
+
 function PageController() {
 
 }
@@ -16,10 +27,10 @@ PageController.prototype.Initialize = function () {
         self[binding.attr('data-name')] = binding;
     }
     
-    self.CurrentMenuItem = self.NavWho;
-    self.CurrentSubMenuItem = self.NavWhoWeAre;
-    self.CurrentSubMenu = self.SubSectionWho;
-    self.CurrentBannerAnimation = self.WhoWeAreBanner;
+    self.CurrentMenuItem = null;
+    self.CurrentSubMenuItem = null;
+    self.CurrentSubMenu = null;
+    self.CurrentBannerAnimation = null;
     self.CurrentContentAnimation = null;
     
     self.WhatsNewImages = self.WhatsNewBanner.find('.slide');
@@ -27,47 +38,63 @@ PageController.prototype.Initialize = function () {
     self.ShowNextWhatsNewImage();
 
     // Who
-    self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho); });
+    self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho, self.NavWhoWeAre, 'office'); });
     self.NavWhoWeAre.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhoWeAreBanner); });
     self.NavOurPhilosophy.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPhilosophyBanner, self.OurPhilosophyContent); });
     self.NavOurPeople.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPeopleBanner, self.OurPeopleContent); });
     
     // What
-    self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat); });
+    self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat, self.NavWhatWeDo, 'table'); });
     self.NavWhatWeDo.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatWeDoBanner, self.WhatWeDoContent); });
     self.NavOurProcess.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurProcessBanner); });
     self.NavOurServices.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurServicesBanner); });
     self.NavWhatsNew.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatsNewBanner); });
     
     setInterval(function () { self.Interval_Tick(); }, 3000);
+    
+    setTimeout(function() {
+        self.NavWho.trigger('click');
+    }, 200);
 
     return self;
 };
 
-PageController.prototype.ShowSubMenu = function(target, subMenu) {
+PageController.prototype.ShowSubMenu = function(target, subMenu, defaultSubMenuItem, backgroundId) {
     var self = this;
     
-    self.CurrentMenuItem.removeClass('is-selected');
+    if (self.CurrentMenuItem)
+        self.CurrentMenuItem.removeClass('is-selected');
+    
     self.CurrentMenuItem = target;
     
-    self.CurrentSubMenu.removeClass('is-active').removeClass('is-expanded');
+    if (self.CurrentSubMenu)
+        self.CurrentSubMenu.removeClass('is-active').removeClass('is-expanded');
+    
     self.CurrentSubMenu = subMenu;
+    
+    self.SectionBackground.removeClass('transparent-background-cover-office transparent-background-cover-table transparent-background-cover-magnets transparent-background-cover-wood');
     
     setTimeout(function() {
         target.addClass('is-selected');
         self.CurrentSubMenu.addClass('is-active');
+    self.SectionBackground.addClass('transparent-background-cover-' + backgroundId);
     }, 100);
     
     setTimeout(function() {
         self.CurrentSubMenu.addClass('is-expanded');
+        defaultSubMenuItem.trigger('click');
     }, 200);
 };
 
 PageController.prototype.ShowAnimation = function(target, bannerAnimation, contentAnimation) {
     var self = this;
     
-    self.CurrentSubMenuItem.removeClass('is-selected');
-    self.CurrentBannerAnimation.removeClass('is-animated');
+    if (self.CurrentSubMenuItem)
+        self.CurrentSubMenuItem.removeClass('is-selected');
+        
+    if (self.CurrentBannerAnimation)
+        self.CurrentBannerAnimation.removeClass('is-animated');
+    
     self.WhiteFlash.removeClass('is-animated');
     self.ContentTransition.removeClass('is-animated');
     self.CurrentSubMenuItem = target;
@@ -102,7 +129,6 @@ PageController.prototype.LoadTemplates = function() {
     var mainContent = document.querySelector('.main-content');
     
     // Who
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhoWeAreBannerTemplate', '.who-we-are-banner'), true));
     readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurPhilosophyBannerTemplate', '.our-philosophy-banner'), true));
     //mainContent.appendChild(document.importNode(GetAnimationFromTemplate('OurPhilosophyContentTemplate', '.our-philosophy-content')), true)
     // What

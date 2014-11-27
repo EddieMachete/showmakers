@@ -69,3 +69,45 @@
        opacity: 1;
     }
 }
+
+
+
+/* --- fade-in-frames ------------------------------- */
+@-webkit-keyframes fade-in-frames {
+    from {
+       opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-frames {
+    from {
+       opacity: 0;
+    }
+    to {
+       opacity: 1;
+    }
+}
+
+
+
+/* --- background-fade-in-frames ------------------------------- */
+@-webkit-keyframes background-fade-in-frames {
+    from {
+       opacity: .1;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes background-fade-in-frames {
+    from {
+       opacity: .1;
+    }
+    to {
+       opacity: 1;
+    }
+}

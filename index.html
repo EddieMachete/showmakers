@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="Css/WhatsNewBannerAnimation.css" />
     <!-- Templates -->
     <!-- Who -->
-    <link id="WhoWeAreBannerTemplate" rel="import" href="WhoWeAreBanner.html" />
     <link id="OurPhilosophyBannerTemplate" rel="import" href="OurPhilosophyBanner.html" />
     <link id="OurPhilosophyContentTemplate" rel="import" href="OurPhilosophyContent.html" />
     <!-- What -->
@@ -34,56 +33,67 @@
     <script type="text/javascript" src="Scripts/Index/IndexMain.js"></script>
     <!-- End Google analytics -->
 </head>
-<body class="office-background background-cover">
+<body class="transparent-background-cover-office" data-controller="Page" data-name="SectionBackground">
 	<div class="l-page-header translucent-gradient">
     	<div class="l-navigation padded-left">
         	<ul class="sections navigation-block list-unstyled text-lowercase left-border-width-gradient text-white">
-            	<li class="tall is-selected" data-controller="Page" data-name="NavWho">
+            	<li class="tall cursor-pointer" data-controller="Page" data-name="NavWho">
                 	<div class="underline">
                     	Who <span class="navigation-highlight-padded text-orange text-roboto-thin">we are</span>
                     </div>
                 </li>
-                <li class="tall" data-controller="Page" data-name="NavWhat">
+                <li class="tall cursor-pointer" data-controller="Page" data-name="NavWhat">
                 	<div class="underline">What</div>
                 </li>
-                <li class="tall">
+                <li class="tall cursor-pointer">
                 	<div class="underline">Why</div>
                 </li>
-                <li class="tall">
+                <li class="tall cursor-pointer">
                 	<div class="underline">Where</div>
                 </li>
             </ul>
             <div class="navigation-block text-lowercase left-border-width-gradient text-white">
-            	<ul class="sub-sections list-unstyled is-active is-expanded"
+            	<ul class="sub-sections list-unstyled"
             	    data-controller="Page" data-name="SubSectionWho">
-                	<li class="tall is-selected" data-controller="Page" data-name="NavWhoWeAre">
+                	<li class="tall cursor-pointer" data-controller="Page" data-name="NavWhoWeAre">
                     	<div class="underline">Who we are</div>
                     </li>
-                    <li class="tall" data-controller="Page" data-name="NavOurPhilosophy">
+                    <li class="tall cursor-pointer" data-controller="Page" data-name="NavOurPhilosophy">
                     	<div class="underline">Our philosophy</div>
                     </li>
-                    <li class="tall" data-controller="Page" data-name="NavOurPeople">
+                    <li class="tall cursor-pointer" data-controller="Page" data-name="NavOurPeople">
                     	<div class="underline">Our people</div>
                     </li>
                 </ul>
             	<ul class="sub-sections list-unstyled"
             	    data-controller="Page" data-name="SubSectionWhat">
-                	<li class="tall" data-controller="Page" data-name="NavWhatWeDo">
+                	<li class="tall cursor-pointer" data-controller="Page" data-name="NavWhatWeDo">
                     	<div class="underline">What we do</div>
                     </li>
-                    <li class="tall" data-controller="Page" data-name="NavOurProcess">
+                    <li class="tall cursor-pointer" data-controller="Page" data-name="NavOurProcess">
                     	<div class="underline">Our process</div>
                     </li>
-                    <li class="tall" data-controller="Page" data-name="NavOurServices">
+                    <li class="tall cursor-pointer" data-controller="Page" data-name="NavOurServices">
                     	<div class="underline">Our services</div>
                     </li>
-                    <li class="tall" data-controller="Page" data-name="NavWhatsNew">
+                    <li class="tall cursor-pointer" data-controller="Page" data-name="NavWhatsNew">
                     	<div class="underline">What&apos;s new</div>
                     </li>
                 </ul>
             </div>
             <div class="frosted-glass content">
             	<div class="readable-gradient bottom-left-round-corners-8" data-controller="Page" data-name="Banner">
+            	    <!-- WHO -->
+                    <!-- ----- Who we are ----- -->
+                    <div class="who-we-are-banner description text-white animation" data-controller="Page" data-name="WhoWeAreBanner">
+                    	<h2>We are technichally savvy designers, communicators, strategiests, creators.</h2>
+                        <p class="text-justified">
+                            ShowMakers Productions is a leader in digital communication and design.
+                            Established in 1990, we produce visually arresting communications that engage the audience, tell a compeling story and inspire positive response.
+                            From tantalizing PowerPoint and video presentations to attention-grabbing marketing tools like software demos, we have the knowledge,
+                            experience and creative vision to get the latest (coolest) digital technologies working for you.
+                        </p>
+                    </div>
             	    <!-- ----- Our People ----- -->
             	    <div class="our-people-banner animation" data-controller="Page" data-name="OurPeopleBanner">
                         <div class="text text-open-sans-light text-white">
@@ -106,26 +116,39 @@
     </div>
     <div class="main-content padded-left frosted-glass top-left-round-corners-8" data-controller="Page" data-name="Content">
         <div class="container main-content-high top-left-round-corners-8">
-            <!-- WHO --
+            <!-- WHO -->
             <!-- ----- Our Philosophy ----- -->
             <div class="our-philosophy-content content main-content-high" data-controller="Page" data-name="OurPhilosophyContent">
                 <div class="content-box">
                     <h1 class="content-title-small">We don&apos;t loose your luggage</h1>
-                    <p class="content-paragraph-small">
+                    <p class="content-paragraph-small text-justified">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
-                    <p class="content-paragraph-small">
+                    <p class="content-paragraph-small text-justified">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
                     </p>
+                    <div class="materialized-identity">
+                        <img src="Images/content-identity.jpg" width="188" height="33" alt="ShowMakers" />
+                    </div>
                 </div>
             </div>
             <!-- ----- Our People ----- -->
             <div class="our-people-content content main-content-high" data-controller="Page" data-name="OurPeopleContent">
                 <div class="content-box">
                     <h1 class="content-title-small">Our People</h1>
-                    <p class="content-paragraph-small">
+                    <p class="content-paragraph-small text-justified">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
+                    <div class="content-paragraph-small">
+                        <img src="Images/lisa.jpg" width="100" height="45" alt="ShowMakers" />
+                        <br />
+                        Lisa Bergman
+                        <br />
+                        President
+                    </div>
+                    <div class="materialized-identity">
+                        <img src="Images/content-identity.jpg" width="188" height="33" alt="ShowMakers" />
+                    </div>
                 </div>
             </div>
             <!-- WHAT -->
