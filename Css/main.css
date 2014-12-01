@@ -117,6 +117,14 @@ body {
 	cursor: pointer;
 }
 
+.rollover-underline {
+	text-decoration: none;
+}
+
+.rollover-underline:hover {
+	text-decoration: underline;
+}
+
 .background-cover {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -229,10 +237,6 @@ body {
     left: 0;
     width: 100%;
 }
-/*
-.readable-gradient .white-flash {
-    z-index: 5;
-}*/
 
 .round-corners-8 {
 	border-radius: 8px;
@@ -378,6 +382,13 @@ body {
       linear-gradient(to bottom, #FFFFFF, rgba(0, 0, 0, 0)) 1 100%;
 }
 
+.white-flash .mask {
+    background-color: #FFF;
+    height: 195px;
+    margin: 0 auto;
+    width: 100%;
+}
+
 .main-content {
 	margin-bottom: 200px;
 	margin-top: 10px;
@@ -400,11 +411,16 @@ body {
 }
 
 .main-content .content {
-	display: none;
+	/*display: none;*/
+	left: 0;
+	position: absolute;
+	top: 0;
+	visibility: hidden;
 }
 
 .main-content .content.is-animated {
-	display: block;
+	/*display: block;*/
+	visibility: visible;
 }
 
 .main-content .content-transition {
@@ -413,7 +429,12 @@ body {
 	overflow: hidden;
 	position: absolute;
 	top: 0;
+	visibility: hidden;
 	width: 100%;
+}
+
+.main-content .content-transition.is-animated {
+	visibility: visible;
 }
 
 .main-content .content-transition .left {
@@ -465,12 +486,27 @@ body {
 	opacity: 0;
 	position: absolute;
 	right: 0;
-    
+}
+
+.is-animated .materialized-identity {
     -webkit-animation: fade-in-frames 600ms forwards;
     animation: fade-in-frames 600ms forwards;
     
     -webkit-animation-delay: 1500ms; /* Chrome, Safari, Opera */
     animation-delay: 1500ms;
+}
+
+/* WHAT */
+/* Our people */
+.our-people-content {
+    background: no-repeat url('../Images/our-people-content.jpg');
+    overflow: hidden;
+}
+
+/* What we do */
+.what-we-do-content {
+    background: no-repeat url('../Images/what-we-do-content.jpg');
+    overflow: hidden;
 }
 
 @media (min-width: 980px) {

@@ -16,6 +16,7 @@
     opacity: 0;
     
     -webkit-transition: opacity 800ms;
+    transition: opacity 800ms;
 }
 
 .whats-new-banner .sprite-animation .slide.is-visible {

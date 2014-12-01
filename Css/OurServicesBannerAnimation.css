@@ -13,7 +13,7 @@
     margin-top: 15px;
 }
 
-.our-services-banner .sprite-animation {
+.our-services-banner.is-animated .sprite-animation {
     background: url('../Images/our-services-ss.png') 0 0;
     height: 200px;
     left: 220px;
@@ -34,18 +34,18 @@
 /* --- what-we-do-shiner-light ------------------------------- */
 @-webkit-keyframes our-services-frames-v {
     0%, 80% {
-        background-position-y: 0px;
+        background-position: 0 0;
     }
     100% {
-        background-position-y: -2955px;
+        background-position: 0 -2955px;
     }
 }
 
 @keyframes our-services-frames-v {
     0%, 80% {
-        background-position-y: 0px;
+        background-position: 0 0;
     }
     100% {
-        background-position-y: -2955px;
+        background-position: 0 -2955px;
     }
 }

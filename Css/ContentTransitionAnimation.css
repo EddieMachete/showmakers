@@ -95,6 +95,7 @@
     100% {
         margin-left: 50%;
         width: 0;
+        display: none;
     }
 }
 
@@ -106,5 +107,6 @@
     100% {
         margin-left: 50%;
         width: 0;
+        display: none;
     }
 }

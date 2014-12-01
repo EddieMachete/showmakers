@@ -42,7 +42,7 @@
     position: absolute;
 }
 
-.our-people-banner .note-animation {
+.our-people-banner.is-animated .note-animation {
     -webkit-animation: our-people-note-frames 600ms forwards; /* Chrome, Safari, Opera */
     animation:  our-people-note-frames 600ms forwards;
     

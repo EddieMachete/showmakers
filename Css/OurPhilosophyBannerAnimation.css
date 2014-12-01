@@ -58,7 +58,7 @@
     position: absolute;
 }
 
-.our-philosophy-banner .logo-and-stars-animation {
+.our-philosophy-banner.is-animated .logo-and-stars-animation {
     -webkit-animation: logo-and-stars-transition 1s forwards; /* Chrome, Safari, Opera */
     animation: logo-and-stars-transition 1s forwards;
     

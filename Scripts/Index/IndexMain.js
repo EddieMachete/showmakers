@@ -18,7 +18,6 @@ function PageController() {
 PageController.prototype.Initialize = function () {
     var self = this;
     
-    self.LoadTemplates();
     var allBindings = $('*[data-controller]');
     var bindings = allBindings.filter('*[data-controller=Page]');
     
@@ -36,6 +35,9 @@ PageController.prototype.Initialize = function () {
     self.WhatsNewImages = self.WhatsNewBanner.find('.slide');
     self.CurrentNextImageIndex = 0;
     self.ShowNextWhatsNewImage();
+    
+    self.ContentTransition.find('.right .transition-border').bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',
+                                                                    function(e) { self.ContentTransition.removeClass('is-animated'); });
 
     // Who
     self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho, self.NavWhoWeAre, 'office'); });
@@ -121,29 +123,6 @@ PageController.prototype.ShowAnimation = function(target, bannerAnimation, conte
             self.CurrentContentAnimation.addClass('is-animated');
         }
     }, 100);
-};
-
-PageController.prototype.LoadTemplates = function() {
-    //var link = document.querySelector('link[rel=import]');
-    var readableGradient = document.querySelector('.readable-gradient');
-    var mainContent = document.querySelector('.main-content');
-    
-    // Who
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurPhilosophyBannerTemplate', '.our-philosophy-banner'), true));
-    //mainContent.appendChild(document.importNode(GetAnimationFromTemplate('OurPhilosophyContentTemplate', '.our-philosophy-content')), true)
-    // What
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhatWeDoBannerTemplate', '.what-we-do-banner'), true));
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurProcessBannerTemplate', '.our-process-banner'), true));
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('OurServicesBannerTemplate', '.our-services-banner'), true));
-    readableGradient.appendChild(document.importNode(GetAnimationFromTemplate('WhatsNewBannerTemplate', '.whats-new-banner'), true));
-    
-    function GetAnimationFromTemplate(templateId, animationClass) {
-        var template = document.getElementById(templateId);
-        var animation = template.import.querySelector(animationClass);
-        //animation.className += ' is-animated';
-        
-        return animation;
-    }
 };
 
 PageController.prototype.ShowNextWhatsNewImage = function() {

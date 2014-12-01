@@ -1,9 +1,26 @@
 .animation {
-    display:none;
+    visibility: hidden;
 }
 
 .animation.is-animated {
-    display: block;
+    visibility: visible;
+}
+
+.animation.is-animated .shrink-horizontal-animation {
+    margin-left: auto;
+    margin-right: auto;
+    
+    -webkit-animation: shrink-horizontal 400ms forwards;
+    animation: shrink-horizontal 400ms forwards;
+    
+    -webkit-animation-delay: 500ms; /* Chrome, Safari, Opera */
+    animation-delay: 500ms;
+}
+
+
+.is-animated .fade-out-animation {
+    -webkit-animation: fade-out 1s forwards;
+    animation: fade-out 1s forwards;
 }
 
 /* --- logo-and-stars-transition ------------------------------- */
@@ -35,14 +52,14 @@
 
 /* --- logo-and-stars-shake ------------------------------- */
 @-webkit-keyframes logo-and-stars-shake {
-    from { background-position-x: 0;}
-    to {background-position-x: 3px;}
+    from { background-position: 0 0;}
+    to {background-position: 3px 0;}
 }
 
 
 @keyframes logo-and-stars-shake {
-    from { background-position-x: 0;}
-    to {background-position-x: 3px;}
+    from { background-position: 0 0;}
+    to {background-position: 3px 0;}
 }
 
 
@@ -109,5 +126,45 @@
     }
     to {
        opacity: 1;
+    }
+}
+
+
+/* --- shrink-horizontal ------------------------------- */
+@-webkit-keyframes shrink-horizontal {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes shrink-horizontal {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+
+/* --- fade-out ------------------------------- */
+@-webkit-keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }

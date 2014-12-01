@@ -1,57 +1,13 @@
-.white-flash .mask {
-    background-color: #FFF;
-    height: 195px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.banner-flash-shrink-vertical-animation {
-    -webkit-animation: banner-flash-shrink-vertical 900ms forwards;
-    animation: banner-flash-shrink-vertical 900ms forwards;
+.white-flash.is-animated .banner-flash-shrink-vertical-animation {
+    -webkit-animation: banner-flash-shrink-vertical 900ms;
+    animation: banner-flash-shrink-vertical 900ms;
     
     -webkit-animation-delay: 200ms; /* Chrome, Safari, Opera */
     animation-delay: 200ms;
 }
 
-.shrink-horizontal-animation {
-    margin-left: auto;
-    margin-right: auto;
-    
-    -webkit-animation: shrink-horizontal 400ms forwards;
-    animation: shrink-horizontal 400ms forwards;
-    
-    -webkit-animation-delay: 500ms; /* Chrome, Safari, Opera */
-    animation-delay: 500ms;
-}
 
-
-.fade-out-animation {
-    -webkit-animation: fade-out 1s forwards;
-    animation: fade-out 1s forwards;
-}
-
-
-/* --- shrink-horizontal ------------------------------- */
-@-webkit-keyframes shrink-horizontal {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 0;
-    }
-}
-
-@keyframes shrink-horizontal {
-    from {
-        width: 100%;
-    }
-    to {
-        width: 0;
-    }
-}
-
-
-/* --- shrink-horizontal ------------------------------- */
+/* --- banner-flash-shrink-vertical ------------------------------- */
 @-webkit-keyframes banner-flash-shrink-vertical {
     0% {
        height: 0px;
@@ -87,25 +43,5 @@
     100% {
         height: 0px;
         margin-top: 97px;
-    }
-}
-
-
-/* --- fade-out ------------------------------- */
-@-webkit-keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes fade-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
     }
 }
