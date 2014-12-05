@@ -92,6 +92,12 @@ body {
 	text-align: justify;
 }
 
+.absolute-top-left {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+
 .display-inline-block {
 	display: inline-block;
 }
@@ -123,6 +129,11 @@ body {
 
 .rollover-underline:hover {
 	text-decoration: underline;
+}
+
+.grayscale {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
 }
 
 .background-cover {
@@ -230,12 +241,25 @@ body {
     overflow: hidden;
     position: relative;
 }
+
+.readable-gradient.what {
+	background: repeating-linear-gradient(#808696, #485369 20px, #8490a6);
+}
         
 .readable-gradient .animation {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+}
+
+.content-readable-gradient {
+	background: repeating-linear-gradient(#0E365C, #216691);
+	height: 340px;
+}
+
+.content-readable-gradient.what {
+	background: repeating-linear-gradient(#485369, #8490a6);
 }
 
 .round-corners-8 {
@@ -411,10 +435,6 @@ body {
 }
 
 .main-content .content {
-	/*display: none;*/
-	left: 0;
-	position: absolute;
-	top: 0;
 	visibility: hidden;
 }
 

@@ -1,0 +1,87 @@
+.content-carousel {
+	position: relative;
+}
+
+.content-carousel .carousel-item {
+	visibility: hidden;
+}
+
+.content-carousel .carousel-item.is-visible {
+	visibility: visible;
+}
+
+.content-carousel .carousel-item .image {
+	opacity: 0;
+	position: relative;
+	
+	-webkit-transition: opacity 800ms;
+	transition: opacity 800ms;
+}
+
+.content-carousel .carousel-item.is-visible .image {
+	border-bottom: solid 2px #FFF;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.content-carousel .carousel-item.is-visible .image .grayscale {
+	display: block;
+}
+
+.content-carousel .carousel-item .description {
+	opacity: 0;
+	margin: 5px 10px;
+}
+
+.content-carousel .carousel-item.is-visible .description {
+	-webkit-animation: fade-in-frames 500ms forwards;
+	animation: fade-in-frames 500ms forwards;
+	
+	-webkit-animation-delay: 800ms;
+	animation-delay: 800ms;
+}
+
+.content-carousel .carousel-item .description .client-name {
+	font-size: 11pt;
+	margin: 0;
+	padding: 0;
+}
+
+.content-carousel .carousel-item .description .work {
+	font-size: 9pt;
+	margin: 0;
+	padding: 0;
+}
+
+.content-carousel .image .color-overlay-250-140 {
+	height: 0;
+	overflow: hidden;
+	width: 0;
+}
+
+.content-carousel .carousel-item.is-visible .image:hover .color-overlay-250-140 {
+	-webkit-animation: color-overlay-frames-250-140 200ms forwards;
+	animation: color-overlay-frames-250-140 200ms forwards;
+}
+
+@-webkit-keyframes color-overlay-frames-250-140 {
+	from {
+		height: 0;
+		width: 0;
+	}
+	to {
+		height: 140px;
+		width: 250px;
+	}
+}
+
+@keyframes color-overlay-frames-250-140 {
+	from {
+		height: 0;
+		width: 0;
+	}
+	to {
+		height: 140px;
+		width: 250px;
+	}
+}

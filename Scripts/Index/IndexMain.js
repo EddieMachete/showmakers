@@ -26,6 +26,7 @@ PageController.prototype.Initialize = function () {
         self[binding.attr('data-name')] = binding;
     }
     
+    self.OurProcessCarousel = (new ContentCarouselController()).SetView(allBindings.filter('[data-controller=ContentCarousel]').filter('[data-name=OurProcess]'));
     self.CurrentMenuItem = null;
     self.CurrentSubMenuItem = null;
     self.CurrentSubMenu = null;
@@ -40,17 +41,19 @@ PageController.prototype.Initialize = function () {
                                                                     function(e) { self.ContentTransition.removeClass('is-animated'); });
 
     // Who
-    self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho, self.NavWhoWeAre, 'office'); });
+    self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho, self.NavWhoWeAre, 'office', 'who'); });
     self.NavWhoWeAre.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhoWeAreBanner); });
     self.NavOurPhilosophy.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPhilosophyBanner, self.OurPhilosophyContent); });
     self.NavOurPeople.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurPeopleBanner, self.OurPeopleContent); });
     
     // What
-    self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat, self.NavWhatWeDo, 'table'); });
+    self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat, self.NavWhatWeDo, 'table', 'what'); });
     self.NavWhatWeDo.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatWeDoBanner, self.WhatWeDoContent); });
-    self.NavOurProcess.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurProcessBanner); });
+    self.NavOurProcess.bind('click', function (e) { return self.OurProcess_Click(e); });
     self.NavOurServices.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurServicesBanner); });
     self.NavWhatsNew.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatsNewBanner); });
+    
+    allBindings.filter('[data-customer-link]').bind('click', function(e) { return self.CustomerLink_Click(e); })
     
     setInterval(function () { self.Interval_Tick(); }, 3000);
     
@@ -61,7 +64,7 @@ PageController.prototype.Initialize = function () {
     return self;
 };
 
-PageController.prototype.ShowSubMenu = function(target, subMenu, defaultSubMenuItem, backgroundId) {
+PageController.prototype.ShowSubMenu = function(target, subMenu, defaultSubMenuItem, backgroundId, sectionName) {
     var self = this;
     
     if (self.CurrentMenuItem)
@@ -70,7 +73,7 @@ PageController.prototype.ShowSubMenu = function(target, subMenu, defaultSubMenuI
     self.CurrentMenuItem = target;
     
     if (self.CurrentSubMenu)
-        self.CurrentSubMenu.removeClass('is-active').removeClass('is-expanded');
+        self.CurrentSubMenu.removeClass('is-active is-expanded');
     
     self.CurrentSubMenu = subMenu;
     
@@ -78,7 +81,7 @@ PageController.prototype.ShowSubMenu = function(target, subMenu, defaultSubMenuI
     
     setTimeout(function() {
         target.addClass('is-selected');
-        self.CurrentSubMenu.addClass('is-active');
+        self.CurrentSubMenu.addClass('is-active').addClass(sectionName);
     self.SectionBackground.addClass('transparent-background-cover-' + backgroundId);
     }, 100);
     
@@ -86,10 +89,16 @@ PageController.prototype.ShowSubMenu = function(target, subMenu, defaultSubMenuI
         self.CurrentSubMenu.addClass('is-expanded');
         defaultSubMenuItem.trigger('click');
     }, 200);
+    
+    setTimeout(function() {
+        self.Banner.removeClass('who what why where').addClass(sectionName);
+    }, 500);
 };
 
 PageController.prototype.ShowAnimation = function(target, bannerAnimation, contentAnimation) {
     var self = this;
+    
+    self.OurProcessCarousel.Hide();
     
     if (self.CurrentSubMenuItem)
         self.CurrentSubMenuItem.removeClass('is-selected');
@@ -141,6 +150,19 @@ PageController.prototype.Interval_Tick = function() {
     
     self.ShowNextWhatsNewImage();
 };
+
+PageController.prototype.OurProcess_Click = function(e) {
+    this.ShowAnimation($(e.currentTarget), this.OurProcessBanner, this.OurProcessContent);
+    this.OurProcessCarousel.Show();
+    
+    return true;
+};
+
+PageController.prototype.CustomerLink_Click = function(e) {
+    alert($(e.currentTarget).attr('data-customer-link'));
+    
+    return true;
+}
 
 function Body_Load(e) {
     var pageController = (new PageController())

@@ -8,6 +8,7 @@
     <!--link rel="stylesheet" type="text/css" href="Css/bootstrap.min.css" /-->
     <link rel="stylesheet" type="text/css" href="Css/main.css" />
     <link rel="stylesheet" type="text/css" href="Css/animations.css" />
+    <link rel="stylesheet" type="text/css" href="Css/ContentCarousel.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhiteFlashAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/ContentTransitionAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurPhilosophyBannerAnimation.css" />
@@ -15,11 +16,13 @@
     <link rel="stylesheet" type="text/css" href="Css/OurPeopleBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhatWeDoBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurProcessBannerAnimation.css" />
+    <link rel="stylesheet" type="text/css" href="Css/OurProcessContentAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/OurServicesBannerAnimation.css" />
     <link rel="stylesheet" type="text/css" href="Css/WhatsNewBannerAnimation.css" />
     <!-- Scripts -->
     <script type="text/javascript" src="Scripts/GoogleAnalytics.js"></script>
     <script type="text/javascript" src="Scripts/jquery.js"></script>
+    <script type="text/javascript" src="Scripts/Index/ContentCarouselController.js"></script>
     <script type="text/javascript" src="Scripts/Index/IndexMain.js"></script>
     <!-- End Google analytics -->
 </head>
@@ -641,7 +644,7 @@
         <div class="container main-content-high top-left-round-corners-8">
             <!-- WHO -->
             <!-- ----- Our Philosophy ----- -->
-            <div class="our-philosophy-content content main-content-high" data-controller="Page" data-name="OurPhilosophyContent">
+            <div class="our-philosophy-content content main-content-high absolute-top-left" data-controller="Page" data-name="OurPhilosophyContent">
                 <div class="content-box">
                     <h1 class="content-title-small">We don't lose your luggage, forget your special requests, <br> or surprise you wiht hidden charges along the way.</h1>
                     <p class="content-paragraph-small text-justified">
@@ -657,7 +660,7 @@
                 </div>
             </div>
             <!-- ----- Our People ----- -->
-            <div class="our-people-content content main-content-high" data-controller="Page" data-name="OurPeopleContent">
+            <div class="our-people-content content main-content-high absolute-top-left" data-controller="Page" data-name="OurPeopleContent">
                 <div class="content-box">
                     <h1 class="content-title-small">Our People are as diverse, thoughtful and innovative <br> as the pieces they produce.</h1>
                     <p class="content-paragraph-small text-justified">
@@ -678,7 +681,8 @@
                 </div>
             </div>
             <!-- WHAT -->
-            <div class="what-we-do-content content main-content-high" data-controller="Page" data-name="WhatWeDoContent">
+            <!-- ----- What we do ----- -->
+            <div class="what-we-do-content content main-content-high absolute-top-left" data-controller="Page" data-name="WhatWeDoContent">
                 <div class="content-box">
                     <h1 class="content-title-small">When &quot;not bad&quot; just isn&apos;t &quot;good enough&quot;</h1>
                     <p class="content-paragraph-small text-justified">
@@ -690,6 +694,85 @@
                     <p class="content-paragraph-small text-justified">
                         Click <a class="text-orange rollover-underline" href="http://www.theshowmakers.com/intro/index.htm" target="_blank">here</a> to view &quot;Rutherford&apos;s presentation,&quot; an entertaining and informative look at how ShowMakers
                         can help your company get noticed.
+                    </p>
+                    <div class="materialized-identity">
+                        <img src="Images/content-identity.jpg" width="188" height="33" alt="ShowMakers" />
+                    </div>
+                </div>
+            </div>
+            <!-- ----- Our process ----- -->
+            <div class="our-process-content content main-content-high absolute-top-left" data-controller="Page" data-name="OurProcessContent">
+                <div class="content-image float-left content-readable-gradient what">
+                    <div class="content-carousel" data-controller="ContentCarousel" data-name="OurProcess">
+                        <div class="carousel-item absolute-top-left cursor-pointer" data-controller="ContentCarouselItem" data-customer-link="AbsoluteSoftware">
+                            <div class="image">
+                                <img class="grayscale" src="Images/whats-new-2.png" width="250" height="140" />
+                                <div class="color-overlay-250-140 absolute-top-left">
+                                    <img src="Images/whats-new-2.png" width="250" height="140" />
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h3 class="client-name text-white">Absolute software</h3>
+                                <p class="work text-white">Corporate Video</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item absolute-top-left cursor-pointer" data-controller="ContentCarouselItem">
+                            <div class="image">
+                                <img class="grayscale" src="Images/whats-new-2.png" width="250" height="140" />
+                                <div class="color-overlay-250-140 absolute-top-left">
+                                    <img src="Images/whats-new-2.png" width="250" height="140" />
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h3 class="client-name text-white">Apparent Networks</h3>
+                                <p class="work text-white">Web-based Interactive Tour</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item absolute-top-left cursor-pointer" data-controller="ContentCarouselItem">
+                            <div class="image">
+                                <img class="grayscale" src="Images/what-we-do-content.jpg" width="250" height="140" />
+                                <div class="color-overlay-250-140 absolute-top-left">
+                                    <img src="Images/what-we-do-content.jpg" width="250" height="140" />
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h3 class="client-name text-white">The Jim Pattison Group</h3>
+                                <p class="work text-white">Corporate Multimedia Presentation</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item absolute-top-left cursor-pointer" data-controller="ContentCarouselItem">
+                            <div class="image">
+                                <img class="grayscale" src="Images/whats-new-1.png" width="250" height="140" />
+                                <div class="color-overlay-250-140 absolute-top-left">
+                                    <img src="Images/whats-new-1.png" width="250" height="140" />
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h3 class="client-name text-white">Corix</h3>
+                                <p class="work text-white">Corporate Overview Digital Brochure</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item absolute-top-left cursor-pointer" data-controller="ContentCarouselItem">
+                            <div class="image">
+                                <img class="grayscale" src="Images/what-we-do-content.jpg" width="250" height="140" />
+                                <div class="color-overlay-250-140 absolute-top-left">
+                                    <img src="Images/what-we-do-content.jpg" width="250" height="140" />
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h3 class="client-name text-white">West Fraser Timber</h3>
+                                <p class="work text-white">50th Anniversary Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box float-left">
+                    <h1 class="content-title-small">We listen. We learn. We think. We create.</h1>
+                    <p class="content-paragraph-small text-justified">
+                        We know you've got a lot on your mind. We also know that coming up with a clear, compelling presentation can be dauting task. (Especially when you're trying to do it between meetings.)
+                    </p>
+                    <p class="content-paragraph-small text-justified">
+                        At ShowMakers, creating communications that inspire is all we think about. So the next time you have something important to say, get in touch with us. We'll make sure the impression you leave is simply unforgettable.
                     </p>
                     <div class="materialized-identity">
                         <img src="Images/content-identity.jpg" width="188" height="33" alt="ShowMakers" />
