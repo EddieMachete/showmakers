@@ -98,8 +98,16 @@ body {
 	top: 0;
 }
 
+.display-block {
+	display: block;
+}
+
 .display-inline-block {
 	display: inline-block;
+}
+
+.display-none {
+	display: none;
 }
 
 .float-left {
@@ -259,7 +267,7 @@ body {
 }
 
 .content-readable-gradient.what {
-	background: repeating-linear-gradient(#485369, #8490a6);
+	background: repeating-linear-gradient(#808696, #485369 20px, #8490a6);
 }
 
 .round-corners-8 {
@@ -453,8 +461,14 @@ body {
 	width: 100%;
 }
 
+.main-content .content-transition.is-right-animated,
 .main-content .content-transition.is-animated {
 	visibility: visible;
+}
+
+
+.main-content .content-transition.is-right-animated .left {
+	visibility: hidden;
 }
 
 .main-content .content-transition .left {

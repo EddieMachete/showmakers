@@ -53,35 +53,63 @@
 	padding: 0;
 }
 
-.content-carousel .image .color-overlay-250-140 {
+.content-carousel .image .color-overlay-250-185,
+.content-carousel .image .color-overlay-250-141 {
 	height: 0;
 	overflow: hidden;
 	width: 0;
 }
 
-.content-carousel .carousel-item.is-visible .image:hover .color-overlay-250-140 {
-	-webkit-animation: color-overlay-frames-250-140 200ms forwards;
-	animation: color-overlay-frames-250-140 200ms forwards;
+.content-carousel .carousel-item.is-visible .image:hover .color-overlay-250-141 {
+	-webkit-animation: color-overlay-frames-250-141 600ms forwards;
+	animation: color-overlay-frames-250-141 600ms forwards;
 }
 
-@-webkit-keyframes color-overlay-frames-250-140 {
+.content-carousel .carousel-item.is-visible .image:hover .color-overlay-250-185 {
+	-webkit-animation: color-overlay-frames-250-185 600ms forwards;
+	animation: color-overlay-frames-250-185 600ms forwards;
+}
+
+@-webkit-keyframes color-overlay-frames-250-141 {
 	from {
 		height: 0;
 		width: 0;
 	}
 	to {
-		height: 140px;
+		height: 141px;
 		width: 250px;
 	}
 }
 
-@keyframes color-overlay-frames-250-140 {
+@keyframes color-overlay-frames-250-141 {
 	from {
 		height: 0;
 		width: 0;
 	}
 	to {
-		height: 140px;
+		height: 141px;
+		width: 250px;
+	}
+}
+
+@-webkit-keyframes color-overlay-frames-250-185 {
+	from {
+		height: 0;
+		width: 0;
+	}
+	to {
+		height: 185px;
+		width: 250px;
+	}
+}
+
+@keyframes color-overlay-frames-250-185 {
+	from {
+		height: 0;
+		width: 0;
+	}
+	to {
+		height: 185;
 		width: 250px;
 	}
 }

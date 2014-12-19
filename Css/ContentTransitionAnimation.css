@@ -14,6 +14,7 @@
 	animation-delay: 500ms;
 }
 
+.main-content .content-transition.is-right-animated .right .mask.collapsible,
 .main-content .content-transition.is-animated .right .mask.collapsible {
 	-webkit-animation: right-mask-collapse-frames 400ms forwards;
 	animation: right-mask-collapse-frames 400ms forwards;
@@ -22,6 +23,13 @@
 	animation-delay: 500ms;
 }
 
+.main-content .content-transition.is-right-animated .right .transition-border.expandable {
+	-webkit-animation: transition-border-expand-frames 900ms;
+	animation: transition-border-expand-frames 900ms;
+	
+	-webkit-animation-delay: 200ms;
+	animation-delay: 200ms;
+}
 
 
 /* --- transition-border-expand-frames ------------------------------- */

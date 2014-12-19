@@ -1,0 +1,44 @@
+.our-services-content .content-image {
+    width: 250px;
+}
+
+.our-services-content .service-collection {
+    font-size: 8pt;
+    margin-top: 15px;
+}
+
+.our-services-content .service-collection .service {
+    background: -10px 3px no-repeat url('../Images/menu-arrow.png');
+    line-height: 23px;
+    padding-left: 20px;
+}
+
+.our-services-content .service-collection .service:hover {
+    background-position: -3px 3px;
+    
+    -webkit-animation: our-services-hover-frames 200ms;
+    animation: our-services-hover-frames 200ms;
+}
+
+.our-services-content .content-box {
+    margin-left: 40px;
+    max-width: 440px;
+}
+
+@-webkit-keyframes our-services-hover-frames {
+    from {
+        background-position: -10px 3px;
+    }
+    to {
+        background-position: -3px 3px;
+    }
+}
+
+@keyframes our-services-hover-frames {
+    from {
+        background-position: -10px 3px;
+    }
+    to {
+        background-position: -3px 3px;
+    }
+}

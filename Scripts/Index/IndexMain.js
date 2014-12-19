@@ -38,7 +38,7 @@ PageController.prototype.Initialize = function () {
     self.ShowNextWhatsNewImage();
     
     self.ContentTransition.find('.right .transition-border').bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',
-                                                                    function(e) { self.ContentTransition.removeClass('is-animated'); });
+                                                                    function(e) { self.ContentTransition.removeClass('is-animated is-right-animated'); });
 
     // Who
     self.NavWho.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWho, self.NavWhoWeAre, 'office', 'who'); });
@@ -50,10 +50,22 @@ PageController.prototype.Initialize = function () {
     self.NavWhat.bind('click', function (e) { self.ShowSubMenu($(e.currentTarget), self.SubSectionWhat, self.NavWhatWeDo, 'table', 'what'); });
     self.NavWhatWeDo.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatWeDoBanner, self.WhatWeDoContent); });
     self.NavOurProcess.bind('click', function (e) { return self.OurProcess_Click(e); });
-    self.NavOurServices.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurServicesBanner); });
+    self.NavOurServices.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.OurServicesBanner, self.OurServicesContent); });
     self.NavWhatsNew.bind('click', function (e) { self.ShowAnimation($(e.currentTarget), self.WhatsNewBanner); });
     
-    allBindings.filter('[data-customer-link]').bind('click', function(e) { return self.CustomerLink_Click(e); })
+    allBindings.filter('[data-customer-link]').bind('click', function(e) { return self.CustomerLink_Click(e); });
+    
+    // Our services
+    allBindings.filter('[data-controller=OurServicesController]').filter('[data-type=OurServicesLink]')
+        .bind('click', function (e) { return self.OurServicesLink_Click(e); });
+    
+    this.OurServicesContentCollection = [];
+    var ourServicesContent = allBindings.filter('[data-controller=OurServicesController]').filter('[data-type=OurServicesContent]');
+    
+    for (var i=0; i<ourServicesContent.length; i++) {
+        var content = $(ourServicesContent[i]);
+        this.OurServicesContentCollection[content.attr('data-value')] = content;
+    }
     
     setInterval(function () { self.Interval_Tick(); }, 3000);
     
@@ -107,7 +119,7 @@ PageController.prototype.ShowAnimation = function(target, bannerAnimation, conte
         self.CurrentBannerAnimation.removeClass('is-animated');
     
     self.WhiteFlash.removeClass('is-animated');
-    self.ContentTransition.removeClass('is-animated');
+    self.ContentTransition.removeClass('is-animated is-right-animated');
     self.CurrentSubMenuItem = target;
     self.CurrentBannerAnimation = bannerAnimation;
     
@@ -162,7 +174,29 @@ PageController.prototype.CustomerLink_Click = function(e) {
     alert($(e.currentTarget).attr('data-customer-link'));
     
     return true;
-}
+};
+
+PageController.prototype.OurServicesLink_Click = function(e) {
+    var self = this;
+    
+    for (var index in this.OurServicesContentCollection)
+        this.OurServicesContentCollection[index].addClass('display-none');
+    
+    var target = $(e.currentTarget);
+    //data-controller="OurServicesController" data-type="OurServicesContent" data-value="multimedia"
+    self.ContentTransition.removeClass('is-animated is-right-animated');
+    
+    setTimeout(function() {
+        self.OurServicesContentCollection[target.attr('data-value')].removeClass('display-none');
+    }, 500);
+    
+    setTimeout(function() {
+        //self.CurrentBannerAnimation.addClass('is-animated');
+        self.ContentTransition.addClass('is-right-animated');
+    }, 100);
+    
+    return true;
+};
 
 function Body_Load(e) {
     var pageController = (new PageController())
