@@ -1,7 +1,7 @@
 name: Close issue when status is set to completed
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
-  issues:
+  project_card:
     types: [edited]
 jobs:
   Explore-GitHub-Actions:
@@ -9,4 +9,5 @@ jobs:
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The state of your issue is ${{ github.event.issue.state }}"
+      - run: echo "🔎 The id of your project card is ${{ github.event.project_card.id }}"
+      - run: echo "🔎 The state of your issue is ${{ github.event.project_card.state }}"
